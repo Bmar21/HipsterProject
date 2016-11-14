@@ -1,9 +1,11 @@
 package hipster.controller;
 
 import hipster.model.Hipster;
+import hipster.view.HipsterFrame;
 
 public class HipsterController 
 {
+	private HipsterFrame appFrame;
 	private int [] numbers;
 	private String [] words = {"This ","is the ","second hipster","level:","initalization","lists"};
 	private Hipster [] hipsters;
@@ -14,6 +16,13 @@ public class HipsterController
 		thirdLevelHipster();
 		
 		hipsters = new Hipster[6];
+		
+		for(int index = 0; index < hipsters.length; index++)
+		{
+			hipsters[index] = new Hipster("Hipster # " + index);
+		}
+		
+		appFrame = new HipsterFrame(this);
 	}
 	
 	private void thirdLevelHipster()
@@ -22,11 +31,8 @@ public class HipsterController
 	}
 	
 	public void start()
+
 	{
-		for(int index = 0; index < hipsters.length; index++)
-		{
-			hipsters[index] = new Hipster("Hipster # " + index);
-		}
 		
 		for(Hipster currentHipster : hipsters)
 		{
@@ -43,4 +49,22 @@ public class HipsterController
 			System.out.println(tempInt +", ");
 		}
 	}
+
+	public String[] getWords()
+	{
+		return words;
+	}
+	
+	public int[] getNumbers()
+	{
+		return numbers;
+	}
+	
+	public Hipster[] getHipsters()
+	{
+		return hipsters;
+	}
+
 }
+
+
