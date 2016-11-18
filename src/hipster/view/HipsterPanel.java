@@ -56,5 +56,14 @@ public class HipsterPanel extends JPanel
 				wordsLabel.setText(selectedText);
 			}
 		});
+		
+		myButton.addActionListener(new ActionListener()
+									{
+			public void actionPerformed(ActionEvent click)
+			{
+				baseController.impactHipster();
+				repaint();
+			}
+		});
 	}
 }

@@ -49,7 +49,15 @@ public class HipsterController
 			System.out.println(tempInt +", ");
 		}
 	}
-
+ 
+	public void impactHipster()
+	{
+		for(Hipster currentHipster : hipsters)
+		{
+			currentHipster.calculateHipsterRank();
+		}
+	}
+	
 	public String[] getWords()
 	{
 		return words;
